@@ -1,0 +1,193 @@
+{% extends 'dedicacion/base.html' %}
+{% load static %}
+
+{% block title %}Nuestro Jardín Secreto 🌸{% endblock %}
+
+{% block content %}
+<div class="min-h-screen flex flex-col items-center justify-center px-4 py-8">
+    <!-- Header principal centrado -->
+    <div class="text-center mb-12 max-w-4xl animate-fade-in-up">
+        <!-- Elemento decorativo superior -->
+        <div class="flex justify-center mb-6">
+            <div class="animate-gentle-bounce text-6xl">💖</div>
+        </div>
+        
+        <h1 class="font-cursive text-5xl md:text-7xl text-pink-600 mb-6">
+            Para Mi Amor
+        </h1>
+        
+        <div class="glass-effect rounded-3xl p-8 mb-8 max-w-2xl mx-auto">
+            <p class="font-elegant text-2xl text-gray-700 mb-4 leading-relaxed">
+                "Bienvenida a nuestro jardín secreto, donde cada flor representa un sentimiento que guardo para ti..."
+            </p>
+            <p class="text-lg text-gray-600">
+                Descubre los caminos ocultos donde florecen mis emociones más sinceras
+            </p>
+        </div>
+    </div>
+
+    <!-- Grid de rutas secretas - Forma circular/organizada -->
+    <div class="max-w-6xl w-full mb-16">
+        <!-- Contenedor principal con diseño elegante -->
+        <div class="glass-effect rounded-3xl p-8 md:p-12">
+            <h2 class="font-elegant text-3xl text-center text-gray-800 mb-12">
+                🌸 Mis Sentimientos para Ti 🌸
+            </h2>
+            
+            <!-- Grid de 2x2 para pantallas grandes, 1 columna para móviles -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Carta Secreta -->
+                <div class="group text-center hover-lift cursor-pointer" 
+                     onclick="mostrarPista(1)">
+                    <div class="bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl p-8 mb-4 
+                               border-2 border-pink-200 group-hover:border-pink-300 transition-all duration-300">
+                        <div class="text-5xl mb-4 animate-pulse-soft">💌</div>
+                        <h3 class="font-elegant text-2xl text-pink-700 mb-3">Carta del Corazón</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Donde escribo todo lo que mi corazón siente por ti, cada palabra es un latido de amor.
+                        </p>
+                        <div class="text-sm text-pink-500 font-medium">
+                            Haz clic para descubrir la pista
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nuestros Recuerdos -->
+                <div class="group text-center hover-lift cursor-pointer" 
+                     onclick="mostrarPista(2)">
+                    <div class="bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl p-8 mb-4 
+                               border-2 border-purple-200 group-hover:border-purple-300 transition-all duration-300">
+                        <div class="text-5xl mb-4 animate-pulse-soft" style="animation-delay: 0.5s;">📸</div>
+                        <h3 class="font-elegant text-2xl text-purple-700 mb-3">Álbum de Recuerdos</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Los momentos más preciados que hemos compartido, cada instante guardado como un tesoro.
+                        </p>
+                        <div class="text-sm text-purple-500 font-medium">
+                            Haz clic para descubrir la pista
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mi Amor -->
+                <div class="group text-center hover-lift cursor-pointer" 
+                     onclick="mostrarPista(3)">
+                    <div class="bg-gradient-to-br from-red-100 to-pink-100 rounded-2xl p-8 mb-4 
+                               border-2 border-red-200 group-hover:border-red-300 transition-all duration-300">
+                        <div class="text-5xl mb-4 animate-pulse-soft" style="animation-delay: 1s;">❤️</div>
+                        <h3 class="font-elegant text-2xl text-red-600 mb-3">Jardín del Amor</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Donde florece el sentimiento más puro que une nuestros corazones para siempre.
+                        </p>
+                        <div class="text-sm text-red-500 font-medium">
+                            Haz clic para descubrir la pista
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Palabras Especiales -->
+                <div class="group text-center hover-lift cursor-pointer" 
+                     onclick="mostrarPista(4)">
+                    <div class="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl p-8 mb-4 
+                               border-2 border-blue-200 group-hover:border-blue-300 transition-all duration-300">
+                        <div class="text-5xl mb-4 animate-pulse-soft" style="animation-delay: 1.5s;">📝</div>
+                        <h3 class="font-elegant text-2xl text-blue-600 mb-3">Fuente de Palabras</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Las palabras más bonitas que quisiera decirte cada día, nacidas desde lo más profundo.
+                        </p>
+                        <div class="text-sm text-blue-500 font-medium">
+                            Haz clic para descubrir la pista
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instrucciones elegantes -->
+    <div class="text-center max-w-2xl animate-fade-in-up" style="animation-delay: 0.3s;">
+        <div class="glass-effect rounded-2xl p-6">
+            <h3 class="font-elegant text-xl text-gray-700 mb-4">💡 Cómo Descubrir los Secretos</h3>
+            <p class="text-gray-600 mb-2">
+                Cada sección tiene una palabra clave. Agrega esta palabra después de 
+                <code class="bg-pink-100 text-pink-700 px-3 py-1 rounded-lg font-mono text-sm">/secretos/</code>
+                en la URL
+            </p>
+            <p class="text-sm text-gray-500 mt-3">
+                Por ejemplo: <span class="font-mono text-pink-600">/secretos/carta/</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Elemento decorativo inferior -->
+    <div class="mt-12 text-center">
+        <div class="animate-float text-4xl text-gold">✨</div>
+        <p class="font-cursive text-lg text-gray-600 mt-4">
+            Que cada clic te lleve a un nuevo descubrimiento de mi amor
+        </p>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function mostrarPista(numero) {
+    const pistas = [
+        {
+            titulo: "💌 Carta del Corazón",
+            pista: "La palabra es 'carta' - Donde las emociones se convierten en palabras eternas",
+            ejemplo: "/secretos/carta/"
+        },
+        {
+            titulo: "📸 Álbum de Recuerdos", 
+            pista: "La palabra es 'recuerdos' - Donde los momentos se convierten en tesoros",
+            ejemplo: "/secretos/recuerdos/"
+        },
+        {
+            titulo: "❤️ Jardín del Amor",
+            pista: "La palabra es 'amor' - Donde florece el sentimiento más puro",
+            ejemplo: "/secretos/amor/"
+        },
+        {
+            titulo: "📝 Fuente de Palabras",
+            pista: "La palabra es 'palabras' - Donde nacen las expresiones del alma",
+            ejemplo: "/secretos/palabras/"
+        }
+    ];
+    
+    const pista = pistas[numero - 1];
+    
+    // Crear modal elegante
+    const modal = document.createElement('div');
+    modal.className = 'fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4';
+    modal.innerHTML = `
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl animate-fade-in-up glass-effect">
+            <div class="text-center">
+                <div class="text-4xl mb-4 animate-gentle-bounce">🔍</div>
+                <h3 class="font-elegant text-2xl text-gray-800 mb-3">${pista.titulo}</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">${pista.pista}</p>
+                <div class="bg-gray-100 rounded-lg p-4 mb-6">
+                    <p class="text-sm text-gray-500 mb-1">Ejemplo de URL:</p>
+                    <code class="text-pink-600 font-mono text-lg">${pista.ejemplo}</code>
+                </div>
+                <button onclick="this.closest('.fixed').remove()" 
+                        class="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-8 py-3 rounded-full 
+                               hover:from-pink-600 hover:to-rose-600 transition-all duration-300 
+                               font-medium shadow-lg hover:shadow-xl">
+                    ¡Entendido!
+                </button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+}
+
+// Efecto de aparición escalonada para los elementos
+document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.group');
+    elements.forEach((element, index) => {
+        element.style.animationDelay = `${index * 0.1}s`;
+        element.classList.add('animate-fade-in-up');
+    });
+});
+</script>
+{% endblock %}

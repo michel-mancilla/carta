@@ -1,0 +1,200 @@
+{% extends 'dedicacion/base.html' %} {% load static %} {% block title %}Carta
+Secreta 💌{% endblock %} {% block content %}
+<div class="min-h-screen flex items-center justify-center px-4 py-8">
+  <div class="max-w-4xl w-full">
+    <!-- Encabezado decorativo -->
+    <div class="text-center mb-8 animate-fade-in-up">
+      <div class="flex justify-center mb-4">
+        <div class="text-6xl animate-gentle-bounce">💌</div>
+      </div>
+      <h1 class="font-cursive text-4xl md:text-5xl text-pink-600 mb-4">
+        Mi Carta para Ti
+      </h1>
+      <div
+        class="w-24 h-1 bg-gradient-to-r from-pink-400 to-rose-400 mx-auto rounded-full"
+      ></div>
+    </div>
+
+    <!-- Contenedor de la carta -->
+    <div
+      class="glass-effect rounded-3xl p-6 md:p-8 lg:p-12 shadow-2xl animate-fade-in-up"
+      style="animation-delay: 0.2s"
+    >
+      <!-- Papel de carta con efecto vintage -->
+      <div
+        class="bg-amber-50 rounded-2xl p-6 md:p-8 lg:p-10 border-2 border-amber-200 shadow-inner bg-gradient-to-br from-amber-50 via-white to-amber-50"
+      >
+        <!-- Fecha -->
+        <div class="text-center mb-8">
+          <div
+            class="bg-gradient-to-r from-pink-100 to-rose-100 rounded-2xl p-4 inline-block"
+          >
+            <p class="font-elegant text-amber-700 text-lg mb-2">
+              ⏳ Tiempo hasta nuestro día especial:
+            </p>
+            <div
+              id="contador-fecha"
+              class="font-cursive text-2xl text-pink-600"
+            >
+              Cargando...
+            </div>
+            <p class="text-sm text-amber-600 mt-2">02 de Abril, 2026 💖</p>
+          </div>
+        </div>
+
+        <!-- Saludo -->
+        <div class="mb-8 text-center">
+          <p
+            class="font-elegant text-2xl md:text-3xl text-amber-800 italic leading-relaxed"
+          >
+            Querida Sheccid Amira Ortuño,
+          </p>
+        </div>
+
+        <!-- Contenido de la carta -->
+        <div class="space-y-6">
+          <p class="font-simple text-gray-700 text-lg leading-relaxed">
+            Desde que apareciste en mi vida, todo comenzó a brillar con una luz
+            diferente. Es como si el mundo hubiera encontrado un nuevo ritmo,
+            uno que solo entiendo cuando estás cerca. Esta carta no busca
+            impresionar, solo quiere ser una pequeña ventana a lo que siento por
+            ti.
+          </p>
+
+          <p class="font-simple text-gray-700 text-lg leading-relaxed">
+            Tu risa es, sin duda, uno de los sonidos más hermosos que existen.
+            Tiene esa magia de romper silencios, de transformar un día gris en
+            un instante cálido. Cuando te escucho reír, siento que todo en mí se
+            acomoda, como si el universo recordara que aún hay belleza en las
+            cosas simples.
+          </p>
+
+          <p class="font-simple text-gray-700 text-lg leading-relaxed">
+            Adoro la alegría que desprendes sin darte cuenta, esa forma tan tuya
+            de llenar los espacios con energía, con vida. A veces pienso que si
+            el sol pudiera tomar forma humana, se parecería a ti, no solo por tu
+            luz, sino por la manera en la que haces florecer todo a tu
+            alrededor.
+          </p>
+
+          <p class="font-simple text-gray-700 text-lg leading-relaxed">
+            Me encanta la forma en que tus palabras, tus gestos, incluso tus
+            silencios, se quedan rondando en mi mente. Es curioso cómo algo tan
+            cotidiano como un mensaje tuyo puede cambiar por completo mi día. Es
+            en esos pequeños detalles donde encuentro la certeza de lo mucho que
+            te quiero.
+          </p>
+
+          <p class="font-simple text-gray-700 text-lg leading-relaxed">
+            A veces imagino lo que sería compartir las noches contigo, no como
+            una fantasía, sino como ese refugio tranquilo donde el cansancio se
+            disuelve con solo sentir tu respiración cerca. Dormir a tu lado
+            sería como encontrar por fin un lugar donde el tiempo se detiene,
+            donde todo tiene sentido.
+          </p>
+
+          <p class="font-simple text-gray-700 text-lg leading-relaxed">
+            Tú has llenado mi vida de una felicidad que no conocía. No una
+            felicidad estruendosa, sino esa calma que llega cuando el alma se
+            siente en casa. Cuando pienso en ti, siento que todo encaja, que
+            cada paso que di antes me llevó exactamente a donde debía estar: a
+            ti.
+          </p>
+
+          <p class="font-simple text-gray-700 text-lg leading-relaxed">
+            No sé si el amor se puede medir, pero si pudiera hacerlo, diría que
+            el mío por ti crece en cada mirada, en cada pensamiento, en cada
+            momento en el que simplemente existes. Gracias por ser parte de mi
+            historia, por inspirarme sin intentarlo, y por recordarme que amar
+            también es encontrar paz.
+          </p>
+        </div>
+
+        <!-- Despedida -->
+        <div class="mt-12 text-center">
+          <p
+            class="font-elegant text-2xl text-amber-800 italic leading-relaxed"
+          >
+            Con todo mi amor,<br />
+            <span class="text-2xl">Dario</span><span class="text-xl">💌</span>
+          </p>
+        </div>
+
+        <!-- Sello decorativo -->
+        <div class="mt-8 flex justify-center">
+          <div
+            class="w-16 h-16 border-4 border-rose-400 rounded-full flex items-center justify-center"
+          >
+            <span class="text-rose-500 text-2xl">❤️</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón de volver -->
+    <div
+      class="text-center mt-8 animate-fade-in-up"
+      style="animation-delay: 0.4s"
+    >
+      <a
+        href="{% url 'inicio' %}"
+        class="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white px-8 py-3 rounded-full hover:from-pink-600 hover:to-rose-600 transition-all duration-300 font-medium shadow-lg hover:shadow-xl hover-lift"
+      >
+        <span>←</span>
+        Volver al jardín secreto
+      </a>
+    </div>
+
+    <!-- Elementos decorativos sutiles -->
+    <div
+      class="fixed bottom-4 left-4 animate-float text-pink-300 text-2xl opacity-60"
+    >
+      🌸
+    </div>
+    <div
+      class="fixed top-4 right-4 animate-float text-rose-300 text-2xl opacity-60"
+      style="animation-delay: 2s"
+    >
+      💫
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script>
+function actualizarContador() {
+    const fechaObjetivo = new Date('2026-04-02T00:00:00').getTime();
+    const ahora = new Date().getTime();
+    const diferencia = fechaObjetivo - ahora;
+
+    if (diferencia < 0) {
+        document.getElementById('contador-fecha').innerHTML = '¡Llegó nuestro día especial! 🎉';
+        return;
+    }
+
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+    let textoContador = '';
+    
+    if (dias > 0) {
+        textoContador += `${dias} día${dias !== 1 ? 's' : ''} `;
+    }
+    if (horas > 0 || dias > 0) {
+        textoContador += `${horas} hora${horas !== 1 ? 's' : ''} `;
+    }
+    if (minutos > 0 || horas > 0 || dias > 0) {
+        textoContador += `${minutos} minuto${minutos !== 1 ? 's' : ''} `;
+    }
+    textoContador += `${segundos} segundo${segundos !== 1 ? 's' : ''}`;
+
+    document.getElementById('contador-fecha').innerHTML = textoContador;
+}
+
+// Actualizar inmediatamente y luego cada segundo
+actualizarContador();
+setInterval(actualizarContador, 1000);
+</script>
+{% endblock %}

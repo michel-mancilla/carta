@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Para Ti 💖{% endblock %}</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración personalizada de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'love-pink': '#fdf2f8',
+                        'love-purple': '#faf5ff',
+                        'soft-rose': '#fecdd3',
+                        'warm-pink': '#fbcfe8',
+                        'light-lavender': '#e9d5ff',
+                        'gold': '#fbbf24',
+                    },
+                    fontFamily: {
+                        'cursive': ['"Dancing Script"', 'cursive'],
+                        'elegant': ['"Playfair Display"', 'serif'],
+                        'simple': ['"Inter"', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'sparkle': 'sparkle 2s ease-in-out infinite',
+                        'gentle-bounce': 'gentle-bounce 3s ease-in-out infinite',
+                        'pulse-soft': 'pulse-soft 4s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-10px) rotate(3deg)' },
+                        },
+                        sparkle: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+                            '50%': { opacity: '1', transform: 'scale(1.1)' },
+                        },
+                        'gentle-bounce': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        'pulse-soft': {
+                            '0%, 100%': { opacity: '0.7' },
+                            '50%': { opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-love': 'linear-gradient(135deg, #fdf2f8 0%, #faf5ff 50%, #f0f9ff 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-6px) scale(1.02);
+        }
+        
+        .floral-border {
+            border-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,20 Q50,10 80,20 Q90,50 80,80 Q50,90 20,80 Q10,50 20,20 Z' fill='none' stroke='%23f9a8d4' stroke-width='2'/%3E%3C/svg%3E") 30 round;
+        }
+    </style>
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="bg-gradient-love min-h-screen font-simple">
+    <!-- Fondo decorativo sutil -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none opacity-40">
+        <!-- Elementos decorativos muy sutiles en las esquinas -->
+        <div class="absolute top-5 left-5 animate-float text-pink-200 text-4xl">
+            ✨
+        </div>
+        <div class="absolute top-5 right-5 animate-float text-purple-200 text-4xl" style="animation-delay: 1s;">
+            🌸
+        </div>
+        <div class="absolute bottom-5 left-5 animate-float text-rose-200 text-4xl" style="animation-delay: 2s;">
+            💫
+        </div>
+        <div class="absolute bottom-5 right-5 animate-float text-lavender-200 text-4xl" style="animation-delay: 3s;">
+            🌷
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="relative z-10 min-h-screen">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+    <!-- Footer -->
+    <footer class="relative z-10 text-center py-6 text-gray-500">
+        <p class="font-cursive text-lg">Hecho con todo mi amor 💕 especialmente para ti</p>
+    </footer>
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

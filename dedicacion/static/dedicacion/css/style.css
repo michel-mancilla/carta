@@ -1,0 +1,287 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Pistas */
+.pistas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.pista {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pista:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.pista-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+}
+
+.pista h3 {
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.pista small {
+    opacity: 0.8;
+    font-size: 0.9em;
+}
+
+/* Cartas */
+.carta-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.carta {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 100%;
+    border: 2px solid #ff6b6b;
+}
+
+.carta-header h1 {
+    color: #ff6b6b;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.carta-content p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+.saludo, .despedida {
+    font-style: italic;
+    color: #666;
+}
+
+.fecha {
+    text-align: right;
+    color: #888;
+    font-size: 0.9em;
+}
+
+/* Recuerdos */
+.recuerdos-container {
+    text-align: center;
+    color: white;
+}
+
+.recuerdos-container h1 {
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    margin-bottom: 40px;
+    font-size: 1.2em;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.recuerdo-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.recuerdo-placeholder {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.recuerdo-desc {
+    font-style: italic;
+}
+
+/* Amor */
+.amor-container {
+    text-align: center;
+    color: white;
+}
+
+.corazon-latiente {
+    font-size: 80px;
+    animation: latido 1s infinite;
+    margin-bottom: 30px;
+}
+
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.sentimientos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.sentimiento-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+/* Palabras */
+.palabras-container {
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.poema {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 30px 0;
+    backdrop-filter: blur(10px);
+}
+
+.versos p {
+    font-style: italic;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.frases-especiales {
+    margin: 30px 0;
+}
+
+.frase {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border-left: 4px solid #ff6b6b;
+}
+
+.promesas ul {
+    list-style: none;
+    padding: 0;
+}
+
+.promesas li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+/* Botones */
+.btn-volver {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-volver:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 20px;
+    color: white;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+    
+    .pistas-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .carta {
+        padding: 20px;
+        margin: 10px;
+    }
+}

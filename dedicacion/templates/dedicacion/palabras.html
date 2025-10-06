@@ -1,0 +1,41 @@
+{% extends 'dedicacion/base.html' %}
+{% load static %}
+
+{% block title %}Palabras Especiales 📝{% endblock %}
+
+{% block content %}
+<div class="palabras-container">
+    <h1>📝 Palabras del Corazón</h1>
+    <p class="intro">Estas son las palabras que quisiera decirte siempre...</p>
+    
+    <div class="poema">
+        <h3>Poema para Ti</h3>
+        <div class="versos">
+            <p>"En tus ojos encuentro el cielo,</p>
+            <p>en tu sonrisa mi consuelo,</p>
+            <p>en tu amor mi razón de ser,</p>
+            <p>contigo quiero siempre crecer."</p>
+        </div>
+    </div>
+    
+    <div class="frases-especiales">
+        <h3>Frases que te dedico</h3>
+        <div class="frase">"Eres el sueño que nunca quise despertar"</div>
+        <div class="frase">"Mi mundo es mejor desde que llegaste"</div>
+        <div class="frase">"Cada latido de mi corazón lleva tu nombre"</div>
+        <div class="frase">"Eres mi hoy y todos mis mañanas"</div>
+    </div>
+    
+    <div class="promesas">
+        <h3>Mis Promesas</h3>
+        <ul>
+            <li>💝 Prometo amarte cada día más</li>
+            <li>🤗 Prometo apoyarte en todo momento</li>
+            <li>😊 Prometo hacerte sonreír siempre</li>
+            <li>🌈 Prometo ser tu refugio seguro</li>
+        </ul>
+    </div>
+    
+    <a href="{% url 'inicio' %}" class="btn-volver">← Volver al inicio</a>
+</div>
+{% endblock %}

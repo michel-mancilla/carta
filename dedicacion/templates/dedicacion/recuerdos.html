@@ -1,0 +1,292 @@
+{% extends 'dedicacion/base.html' %}
+{% load static %}
+
+{% block title %}Nuestros Recuerdos 📸{% endblock %}
+
+{% block content %}
+<div class="min-h-screen px-4 py-8">
+    <!-- Header -->
+    <div class="text-center mb-12 animate-fade-in-up">
+        <div class="flex justify-center mb-4">
+            <div class="text-6xl animate-gentle-bounce">📸</div>
+        </div>
+        <h1 class="font-cursive text-4xl md:text-5xl text-purple-600 mb-4">
+            Nuestros Recuerdos
+        </h1>
+        <p class="font-elegant text-xl text-gray-700 max-w-2xl mx-auto">
+            Cada momento contigo es un tesoro que guardo en mi corazón
+        </p>
+    </div>
+
+    <!-- Galería de imágenes -->
+    <div class="max-w-7xl mx-auto mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="galeria">
+            <!-- Las imágenes se cargarán aquí con JavaScript -->
+        </div>
+    </div>
+
+   
+
+    <!-- Mensaje final -->
+    <div class="text-center max-w-4xl mx-auto animate-fade-in-up" style="animation-delay: 0.5s;">
+        <div class="glass-effect rounded-2xl p-8">
+            <p class="font-cursive text-2xl text-purple-600 mb-4">
+                "Cada recuerdo contigo es único y especial"
+            </p>
+            <p class="text-gray-700 text-lg">
+                Estas imágenes y momentos son solo el comienzo de todos los recuerdos 
+                que espero crear a tu lado. Aparte que faltan demasiadas que estan por venir.
+                Cada instante contigo vale más que mil palabras.
+            </p>
+        </div>
+    </div>
+
+    <!-- Botón de volver -->
+    <div class="text-center mt-12">
+        <a href="{% url 'inicio' %}" 
+           class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-indigo-500 
+                  text-white px-8 py-3 rounded-full hover:from-purple-600 hover:to-indigo-600 
+                  transition-all duration-300 font-medium shadow-lg hover:shadow-xl hover-lift">
+            ← Volver al jardín secreto
+        </a>
+    </div>
+</div>
+
+<!-- Modal para ver imagen ampliada -->
+<div id="imageModal" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4">
+    <div class="max-w-4xl max-h-full relative">
+        <button onclick="closeModal()" 
+                class="absolute -top-12 right-0 text-white text-2xl hover:text-purple-300 transition-colors">
+            ✕
+        </button>
+        <img id="modalImage" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded-lg">
+        <div id="modalCaption" class="text-white text-center mt-4 font-elegant text-lg"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Datos de las imágenes con sus descripciones
+const imagenesRecuerdos = [
+    {
+        src: "{% static 'dedicacion/images/recuerdos/besito.jpg' %}",
+        descripcion: "Aunque digas que son fotos feas o lo que sea siempre me gustara sacar fotos de ti *besito",
+        fecha: "13/03/2025"
+    },
+    {
+        src: "{% static 'dedicacion/images/recuerdos/catedral1ra.jpg' %}",
+        descripcion: "Nuestra primera visita juntos a la catedral el como te gustaba y ya sabias datos",
+        fecha: "04/09/2024"
+    },
+    {
+        src: "{% static 'dedicacion/images/recuerdos/eldiavlo.jpg' %}",
+        descripcion: "El diavlo asjhashj las risas del dia los cuentos los lugares good",
+        fecha: "15/02/2025"
+    },
+    {
+        src: "{% static 'dedicacion/images/recuerdos/ella.jpg' %}",
+        descripcion: "De verdad que tu mirada es algo que me encanta tantoo",
+        fecha: "24/07/2025"
+    },
+    {
+        src: "{% static 'dedicacion/images/recuerdos/ella2.jpg' %}",
+        descripcion: "Esa mirada que dice más que mil palabras",
+        fecha: "26/08/2024"
+    },
+    {
+        src: "{% static 'dedicacion/images/recuerdos/ella3.jpg' %}",
+        descripcion: "La persona más hermosa que he conocido",
+        fecha: "12/09/2024"
+    },
+    {
+        src: "{% static 'dedicacion/images/recuerdos/guayna.jpg' %}",
+        descripcion: "Noches llenas de música risas y romance aunque te queria perrear no me dejaste askdhkasjdk ",
+        fecha: "10/05/2025"
+    },
+    {
+        src: "{% static 'dedicacion/images/recuerdos/impulso.jpg' %}",
+        descripcion: "Esa ves si me gusto demasiado tu apoyo por que yo sabia que es siempre tendria ese apoyo en ti",
+        fecha: "18/06/2024"
+    },
+    {
+        src: "{% static 'dedicacion/images/recuerdos/los2.jpg' %}",
+        descripcion: "Juntos frente al mundo, sea que hayan problemas cosas que nos enojen pero solo escojamonos uno al otro",
+        fecha: "24/07/2025"
+    },
+    {
+        src: "{% static 'dedicacion/images/recuerdos/los2sonsos.jpg' %}",
+        descripcion: "Locuras que solo nosotros podemos entender, por que estamos loquitoss",
+        fecha: "17/08/2025"
+    },
+    {
+        src: "{% static 'dedicacion/images/recuerdos/misamores.jpg' %}",
+        descripcion: "Los abrazos con el buen Ron el cual hacia que estemos juntos el que nos acompaño",
+        fecha: "31/05/2025"
+    },
+    {
+        src: "{% static 'dedicacion/images/recuerdos/misamores2.jpg' %}",
+        descripcion: "El dia que te dije que eras su lugar seguro de verdad hubiera querido conocerlo",
+        fecha: "17/01/2024"
+    },
+    {
+        src: "{% static 'dedicacion/images/recuerdos/misamores3.jpg' %}",
+        descripcion: "Mis dos loquitos. Felicidad pura",
+        fecha: "08/02/2025"
+    },
+    {
+        src: "{% static 'dedicacion/images/recuerdos/negrin.jpg' %}",
+        descripcion: "Aventuras con el Lucy, ese loquito que se deja querer con comida tu compañero el negrito hermoso",
+        fecha: "24/08/2025"
+    },
+    {
+        src: "{% static 'dedicacion/images/recuerdos/recuerdaso.jpg' %}",
+        descripcion: "El regalo que me encanto por que la galaxia se queda pequeña al lado de lo que siento por ti",
+        fecha: "02/10/2024"
+    }
+];
+
+// Cargar galería
+function cargarGaleria() {
+    const galeria = document.getElementById('galeria');
+    
+    imagenesRecuerdos.forEach((imagen, index) => {
+        const item = document.createElement('div');
+        item.className = 'group cursor-pointer animate-fade-in-up';
+        item.style.animationDelay = `${index * 0.1}s`;
+        
+        item.innerHTML = `
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl 
+                       transition-all duration-500 hover-lift border-2 border-purple-100 
+                       flex flex-col h-full">
+                <div class="relative overflow-hidden flex-1">
+                    <img 
+                        src="${imagen.src}" 
+                        alt="${imagen.descripcion}"
+                        loading="lazy"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        onclick="abrirModal('${imagen.src}', '${imagen.descripcion}', '${imagen.fecha}')"
+                        style="min-height: 300px;"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-3 left-3 right-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-sm font-semibold">${imagen.fecha}</p>
+                    </div>
+                    <!-- Indicador de formato vertical -->
+                    <div class="absolute top-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        📱 Vertical
+                    </div>
+                </div>
+                <div class="p-4 flex-none">
+                    <p class="text-gray-700 text-sm line-clamp-2">${imagen.descripcion}</p>
+                </div>
+            </div>
+        `;
+        
+        galeria.appendChild(item);
+    });
+}
+
+// Funciones del modal
+function abrirModal(src, descripcion, fecha) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    
+    modalImage.src = src;
+    modalImage.alt = descripcion;
+    
+    // Ajustar clases para imágenes verticales en el modal
+    modalImage.className = 'max-w-full max-h-[85vh] object-contain rounded-lg';
+    
+    modalCaption.innerHTML = `
+        <p class="text-xl mb-2">${descripcion}</p>
+        <p class="text-purple-300">${fecha}</p>
+    `;
+    
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+}
+
+// Funciones del video
+function toggleVideo() {
+    const video = document.getElementById('nuestroVideo');
+    const videoText = document.getElementById('videoText');
+    
+    if (video.paused) {
+        video.play();
+        videoText.innerHTML = '⏸️ Pausar';
+    } else {
+        video.pause();
+        videoText.innerHTML = '▶️ Reproducir';
+    }
+}
+
+// Cerrar modal con ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+
+// Cerrar modal haciendo click fuera de la imagen
+document.getElementById('imageModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
+});
+
+// Cargar la galería cuando la página esté lista
+document.addEventListener('DOMContentLoaded', cargarGaleria);
+</script>
+
+<style>
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Mejorar la apariencia del modal */
+#imageModal img {
+    animation: zoomIn 0.3s ease-out;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Estilos específicos para imágenes verticales */
+.vertical-image-container {
+    aspect-ratio: 9/16;
+}
+
+@media (max-width: 768px) {
+    .vertical-image-container {
+        aspect-ratio: 9/16;
+    }
+}
+
+/* Asegurar que las imágenes mantengan su proporción */
+.image-vertical {
+    object-fit: cover;
+    object-position: center;
+}
+</style>
+{% endblock %}

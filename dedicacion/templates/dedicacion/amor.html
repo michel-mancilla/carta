@@ -1,0 +1,350 @@
+{% extends 'dedicacion/base.html' %}
+{% load static %}
+
+{% block title %}Jardín del Amor 🌸{% endblock %}
+
+{% block content %}
+<div class="min-h-screen px-4 py-8">
+    <!-- Header -->
+    <div class="text-center mb-12 animate-fade-in-up">
+        <div class="flex justify-center mb-4">
+            <div class="text-6xl animate-gentle-bounce">❤️</div>
+        </div>
+        <h1 class="font-cursive text-4xl md:text-5xl text-red-600 mb-4">
+            Jardín del Amor
+        </h1>
+        <p class="font-elegant text-xl text-gray-700 max-w-2xl mx-auto">
+            Donde cada flor representa un sentimiento que crece por ti
+        </p>
+    </div>
+
+    <!-- Sección central con imagen rodeada de flores -->
+    <div class="max-w-6xl mx-auto mb-16 relative">
+        <!-- Flores decorativas alrededor -->
+        <div class="absolute inset-0 pointer-events-none z-10">
+            <!-- Gerberas -->
+            <div class="absolute top-10 left-10 animate-float text-pink-400 text-4xl opacity-80">
+                {% include 'dedicacion/svgs/gerbera.html' %}
+            </div>
+            <div class="absolute top-5 right-20 animate-float text-rose-400 text-3xl opacity-70" style="animation-delay: 1s;">
+                {% include 'dedicacion/svgs/gerbera.html' %}
+            </div>
+            <div class="absolute bottom-20 left-5 animate-float text-red-300 text-5xl opacity-90" style="animation-delay: 2s;">
+                {% include 'dedicacion/svgs/gerbera.html' %}
+            </div>
+            <div class="absolute bottom-10 right-10 animate-float text-pink-300 text-4xl opacity-80" style="animation-delay: 3s;">
+                {% include 'dedicacion/svgs/gerbera.html' %}
+            </div>
+
+            <!-- Hortensias -->
+            <div class="absolute top-20 left-1/4 animate-float text-purple-400 text-3xl opacity-75" style="animation-delay: 0.5s;">
+                {% include 'dedicacion/svgs/hortensia.html' %}
+            </div>
+            <div class="absolute top-1/3 right-16 animate-float text-blue-300 text-4xl opacity-85" style="animation-delay: 1.5s;">
+                {% include 'dedicacion/svgs/hortensia.html' %}
+            </div>
+            <div class="absolute bottom-1/3 left-20 animate-float text-indigo-300 text-3xl opacity-70" style="animation-delay: 2.5s;">
+                {% include 'dedicacion/svgs/hortensia.html' %}
+            </div>
+            <div class="absolute bottom-32 right-1/4 animate-float text-purple-300 text-5xl opacity-90" style="animation-delay: 3.5s;">
+                {% include 'dedicacion/svgs/hortensia.html' %}
+            </div>
+
+            <!-- Chispitas -->
+            <div class="absolute top-16 left-16 animate-sparkle text-yellow-300 text-2xl" style="animation-delay: 0.2s;">
+                {% include 'dedicacion/svgs/sparkle.html' %}
+            </div>
+            <div class="absolute top-24 right-24 animate-sparkle text-yellow-200 text-xl" style="animation-delay: 0.7s;">
+                {% include 'dedicacion/svgs/sparkle.html' %}
+            </div>
+            <div class="absolute bottom-24 left-24 animate-sparkle text-amber-300 text-3xl" style="animation-delay: 1.2s;">
+                {% include 'dedicacion/svgs/sparkle.html' %}
+            </div>
+            <div class="absolute bottom-16 right-16 animate-sparkle text-yellow-100 text-2xl" style="animation-delay: 1.8s;">
+                {% include 'dedicacion/svgs/sparkle.html' %}
+            </div>
+            <div class="absolute top-1/2 left-1/3 animate-sparkle text-amber-200 text-xl" style="animation-delay: 2.3s;">
+                {% include 'dedicacion/svgs/sparkle.html' %}
+            </div>
+            <div class="absolute top-1/2 right-1/3 animate-sparkle text-yellow-300 text-3xl" style="animation-delay: 2.8s;">
+                {% include 'dedicacion/svgs/sparkle.html' %}
+            </div>
+        </div>
+
+        <!-- Imagen central con la frase "Sueño" -->
+        <div class="relative z-20 animate-fade-in-up" style="animation-delay: 0.3s;">
+            <!-- Marco decorativo -->
+            <div class="absolute -inset-6 bg-gradient-to-r from-red-200 via-pink-200 to-rose-200 rounded-3xl transform rotate-2 opacity-60"></div>
+            <div class="absolute -inset-6 bg-gradient-to-r from-rose-200 via-pink-200 to-red-200 rounded-3xl transform -rotate-2 opacity-60"></div>
+            
+            <!-- Contenedor principal -->
+            <div class="relative glass-effect rounded-3xl p-8 md:p-12 text-center border-4 border-white shadow-2xl">
+                <!-- Imagen central -->
+                <div class="mb-8">
+                    <div class="w-56 h-56 md:w-64 md:h-64 mx-auto rounded-full overflow-hidden border-8 border-white shadow-2xl relative">
+                        <img 
+                            src="{% static 'dedicacion/images/jardin/sueño1.png' %}" 
+                            alt="Nuestro sueño"
+                            class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgdmlld0JveD0iMCAwIDI1NiAyNTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiByeD0iMTI4IiByeT0iMTI4IiBmaWxsPSIjRkY2QjhCIi8+CjxwYXRoIGQ9Ik0xMjggODBDMTAwIDEwMCA4NSAxMzAgODUgMTY1Qzg1IDIwMCAxMDUgMjE1IDEyOCAyMzBDMTUxIDIxNSAxNzEgMjAwIDE3MSAxNjVDMTcxIDEzMCAxNTYgMTAwIDEyOCA4MFoiIGZpbGw9IndoaXRlIi8+Cjx0ZXh0IHg9IjEyOCIgeT0iMTQwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkY2QjhCIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSJib2xkIj5TdWVuw7FvPC90ZXh0Pgo8L3N2Zz4='"
+                        >
+                        <!-- Efecto de brillo en la imagen -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-transparent via-white/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                </div>
+                
+                <!-- Frase "Sueño" -->
+                <div class="mb-8">
+                    <h2 class="font-cursive text-6xl md:text-7xl text-red-600 mb-6 bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
+                        Sueño
+                    </h2>
+                    <div class="w-48 h-1 bg-gradient-to-r from-red-400 to-pink-400 mx-auto rounded-full shadow-lg"></div>
+                </div>
+                
+                <!-- Descripción -->
+                <div class="max-w-2xl mx-auto">
+                    <p class="font-elegant text-2xl text-gray-700 leading-relaxed mb-6">
+                        "Mi sueño más bonito es construir una vida a tu lado"
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Tu llegada a casa en ese sueño, encontrándote con Jade, Ron, y Bruce (y la presencia implícita de Lucy), encapsula el anhelo de ese refugio perfecto. Es la imagen de la felicidad completa, un sueño de poder estar juntos sin que tengamos que preocuparnos por nada.
+
+Donde cada día sea una nueva página de nuestra historia de amor, llena de risas, complicidad y momentos que atesorar por siempre. Eres el sueño que nunca quise despertar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Galería de Sentimientos Florales -->
+    <div class="max-w-6xl mx-auto mb-16">
+        <h2 class="font-elegant text-3xl text-center text-gray-800 mb-12">
+            🌸 Los Sentimientos que Florecen en Mi Jardín 🌸
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="jardinFlores">
+            <!-- Las flores se cargarán aquí con JavaScript -->
+        </div>
+    </div>
+
+    <!-- Mensaje final con más flores decorativas -->
+    <div class="max-w-4xl mx-auto relative">
+        <!-- Flores decorativas adicionales -->
+        <div class="absolute -top-8 -left-8 text-4xl text-pink-300 animate-float opacity-70">
+            {% include 'dedicacion/svgs/gerbera.html' %}
+        </div>
+        <div class="absolute -bottom-6 -right-6 text-3xl text-purple-300 animate-float opacity-80" style="animation-delay: 2s;">
+            {% include 'dedicacion/svgs/hortensia.html' %}
+        </div>
+        
+        <div class="relative z-10 glass-effect rounded-2xl p-8 bg-gradient-to-br from-red-50 to-pink-50 border-2 border-pink-200 animate-fade-in-up" style="animation-delay: 0.5s;">
+            <p class="font-cursive text-2xl text-red-600 mb-4 text-center">
+                "En el jardín de mi corazón, solo floreces tú"
+            </p>
+            <p class="text-gray-700 text-lg leading-relaxed text-center">
+                Cada sentimiento que nace por ti es como una flor única en este jardín. 
+                Algunas son fuertes como rosas, otras delicadas como margaritas, 
+                pero todas tienen tu nombre escrito en sus pétalos. Este jardín existe 
+                porque tú le das vida con tu amor.
+            </p>
+        </div>
+    </div>
+
+    <!-- Botón de volver -->
+    <div class="text-center mt-16">
+        <a href="{% url 'inicio' %}" 
+           class="inline-flex items-center gap-2 bg-gradient-to-r from-red-500 to-pink-500 
+                  text-white px-8 py-3 rounded-full hover:from-red-600 hover:to-pink-600 
+                  transition-all duration-300 font-medium shadow-lg hover:shadow-xl hover-lift
+                  relative z-20">
+            ← Volver al jardín secreto
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Datos de las flores/sentimientos
+const floresSentimientos = [
+    {
+        tipo: "🌹 Rosa Roja",
+        titulo: "Amor Apasionado",
+        descripcion: "El amor intenso que siento por ti, que crece cada día más fuerte y verdadero",
+        color: "from-red-100 to-rose-100",
+        border: "border-red-200",
+        emoji: "🌹"
+    },
+    {
+        tipo: "🌼 Girasol",
+        titulo: "Admiración Eterna",
+        descripcion: "Como un girasol sigue al sol, yo sigo la luz de tu sonrisa cada día",
+        color: "from-yellow-100 to-amber-100",
+        border: "border-yellow-200",
+        emoji: "🌼"
+    },
+    {
+        tipo: "🌸 Cerezo",
+        titulo: "Belleza Efímera",
+        descripcion: "Aprecio cada momento contigo como si fuera único, precioso e irrepetible",
+        color: "from-pink-100 to-rose-100",
+        border: "border-pink-200",
+        emoji: "🌸"
+    },
+    {
+        tipo: "🌷 Tulipán",
+        titulo: "Declaración Perfecta",
+        descripcion: "Eres el amor perfecto que siempre soñé encontrar en esta vida",
+        color: "from-purple-100 to-pink-100",
+        border: "border-purple-200",
+        emoji: "🌷"
+    },
+    {
+        tipo: "💮 Flor de Loto",
+        titulo: "Pureza del Alma",
+        descripcion: "Mi amor por ti es puro, sincero y surge desde lo más profundo de mi ser",
+        color: "from-white to-blue-50",
+        border: "border-blue-200",
+        emoji: "💮"
+    },
+    {
+        tipo: "🏵️ Roseta",
+        titulo: "Elegancia Natural",
+        descripcion: "Admiro la elegancia con que enfrentas la vida y cómo iluminas mi mundo",
+        color: "from-orange-100 to-red-100",
+        border: "border-orange-200",
+        emoji: "🏵️"
+    },
+    {
+        tipo: "🌺 Hibisco",
+        titulo: "Belleza Exótica",
+        descripcion: "Tu esencia única y especial que cautiva mi corazón constantemente",
+        color: "from-red-100 to-pink-100",
+        border: "border-red-200",
+        emoji: "🌺"
+    },
+    {
+        tipo: "🌻 Girasol Brillante",
+        titulo: "Felicidad Pura",
+        descripcion: "La alegría radiante que siento cuando estoy a tu lado, iluminando mis días",
+        color: "from-yellow-50 to-orange-50",
+        border: "border-yellow-300",
+        emoji: "🌻"
+    }
+];
+
+// Cargar jardín de flores
+function cargarJardin() {
+    const jardin = document.getElementById('jardinFlores');
+    
+    floresSentimientos.forEach((flor, index) => {
+        const item = document.createElement('div');
+        item.className = 'group cursor-pointer animate-fade-in-up jardin-item';
+        item.style.animationDelay = `${index * 0.15}s`;
+        
+        item.innerHTML = `
+            <div class="bg-gradient-to-br ${flor.color} rounded-2xl p-6 shadow-lg 
+                       hover:shadow-2xl transition-all duration-500 hover-lift 
+                       border-2 ${flor.border} h-full flex flex-col relative overflow-hidden">
+                <!-- Efecto de brillo de fondo -->
+                <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div class="text-center mb-4 relative z-10">
+                    <div class="text-4xl mb-2 animate-gentle-bounce">${flor.emoji}</div>
+                    <h3 class="font-elegant text-lg text-gray-800 font-semibold">${flor.tipo}</h3>
+                </div>
+                
+                <div class="flex-1 relative z-10">
+                    <h4 class="font-semibold text-gray-900 mb-2 text-center">${flor.titulo}</h4>
+                    <p class="text-gray-700 text-sm leading-relaxed text-center">
+                        ${flor.descripcion}
+                    </p>
+                </div>
+                
+                <!-- Efecto de polvo de hadas al hover -->
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    <div class="absolute top-2 right-2 text-yellow-300 animate-sparkle">✨</div>
+                    <div class="absolute bottom-2 left-2 text-pink-300 animate-sparkle" style="animation-delay: 0.3s;">✨</div>
+                    <div class="absolute top-1/2 left-1/4 text-amber-200 animate-sparkle" style="animation-delay: 0.6s;">✨</div>
+                </div>
+            </div>
+        `;
+        
+        jardin.appendChild(item);
+    });
+}
+
+// Efecto de lluvia de pétalos mejorado
+function crearLluviaPetales() {
+    const petalos = ['🌸', '🌺', '🌷', '🌹', '💮', '🏵️', '🌼', '🌻', '🌺', '🌷'];
+    const body = document.body;
+    
+    for (let i = 0; i < 20; i++) {
+        const petalo = document.createElement('div');
+        petalo.className = 'fixed top-0 text-2xl pointer-events-none z-0 opacity-70';
+        petalo.style.left = Math.random() * 100 + 'vw';
+        petalo.style.animationDelay = Math.random() * 8 + 's';
+        petalo.style.animationDuration = (Math.random() * 15 + 15) + 's';
+        petalo.textContent = petalos[Math.floor(Math.random() * petalos.length)];
+        petalo.style.animation = `caerPetales ${Math.random() * 15 + 15}s linear infinite`;
+        petalo.style.fontSize = (Math.random() * 20 + 16) + 'px';
+        
+        body.appendChild(petalo);
+    }
+}
+
+// Inicializar
+document.addEventListener('DOMContentLoaded', function() {
+    cargarJardin();
+    crearLluviaPetales();
+});
+</script>
+
+<style>
+/* Animación de caída de pétalos mejorada */
+@keyframes caerPetales {
+    0% {
+        transform: translateY(-100px) rotate(0deg) scale(0.8);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Efectos específicos para el jardín */
+.jardin-item {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jardin-item:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* Asegurar que las SVGs tengan buen tamaño */
+svg {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Responsive para las flores decorativas */
+@media (max-width: 768px) {
+    .absolute.inset-0 .absolute {
+        transform: scale(0.7);
+    }
+    
+    svg {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+</style>
+{% endblock %}
