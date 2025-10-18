@@ -1,14 +1,22 @@
+
 {
     "builds" : [
         {
-            "src": "<proyecto_amor/wsgi.py",
+            "src": "VercelDeploy/wsgi.py",
             "use": "@vercel/python"
+        },
+        {
+            "src": "build.sh",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "staticfiles"
+            }
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "<proyecto_amor>/wsgi.py"
+            "dest": "VercelDeploy/wsgi.py"
         }
     ]
 }
