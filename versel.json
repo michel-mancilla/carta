@@ -2,7 +2,7 @@
 {
     "builds" : [
         {
-            "src": "VercelDeploy/wsgi.py",
+            "src": "proyecto_amor/wsgi.py",
             "use": "@vercel/python"
         },
         {
@@ -16,7 +16,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "VercelDeploy/wsgi.py"
+            "dest": "proyecto_amor/wsgi.py"
         }
     ]
 }
