@@ -1,11 +1,20 @@
 #!/usr/bin/env bash
 
-echo "Construyendo aplicación..."
-python3 -m pip install -r requirements.txt
+# 1. Instalación de Node y Construcción de Frontend
+echo "-> Instalando dependencias de Node..."
+# Instala Tailwind (la única dependencia de Node)
+npm install
 
-echo "Migrando Base de Datos..."
-python3 manage.py makemigrations --noinput
-python3 manage.py migrate --noinput
+# Ejecuta el script 'build' recién añadido del package.json para generar el CSS final.
+echo "-> Ejecutando npm run build para compilar CSS..."
+npm run build 
 
-echo "Recopilando archivos estáticos..."
-python3 manage.py collectstatic --noinput
+# 2. Instalación de Python
+echo "-> Instalando dependencias de Python..."
+# Aquí se asegura la instalación de Django, Gunicorn, Whitenoise, etc.
+pip install -r requirements.txt
+
+# 3. Recolección de Archivos Estáticos de Django
+# Esto recoge el CSS generado en el paso 1 junto con los estáticos de Django.
+echo "-> Recolectando archivos estáticos de Django..."
+python manage.py collectstatic --noinput --clear
