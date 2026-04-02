@@ -14,3 +14,6 @@ def mi_amor(request):
 
 def palabras_especiales(request):
     return render(request, 'dedicacion/palabras.html')
+
+def mensaje_aniversario(request):
+    return render(request, 'dedicacion/aniversario.html')

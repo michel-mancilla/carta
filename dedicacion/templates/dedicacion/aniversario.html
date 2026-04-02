@@ -1,0 +1,165 @@
+{% extends 'dedicacion/base.html' %} 
+{% load static %} 
+
+{% block title %}Nuestro 2do Aniversario 💖{% endblock %} 
+
+{% block extra_css %}
+<style>
+    .scrapbook-card {
+        background-color: #fff9f0;
+        background-image: 
+            radial-gradient(#d97706 0.5px, transparent 0.5px),
+            radial-gradient(#d97706 0.5px, #fff9f0 0.5px);
+        background-size: 20px 20px;
+        background-position: 0 0, 10px 10px;
+        opacity: 0.8;
+    }
+    
+    .polaroid {
+        background: white;
+        padding: 10px 10px 40px 10px;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        transform: rotate(-2deg);
+        transition: transform 0.3s ease;
+    }
+    
+    .polaroid:hover {
+        transform: rotate(0deg) scale(1.05);
+        z-index: 20;
+    }
+
+    .polaroid-right {
+        transform: rotate(3deg);
+    }
+
+    .funny-label {
+        font-family: 'cursive';
+        background: #fef08a;
+        padding: 2px 10px;
+        border-radius: 4px;
+        transform: rotate(-5deg);
+        display: inline-block;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="min-h-screen pt-20 pb-12 px-4 flex flex-col items-center">
+    <!-- Encabezado de Aniversario -->
+    <div class="text-center mb-12 animate-fade-in-up">
+        <h1 class="font-cursive text-5xl md:text-7xl text-pink-600 mb-2 drop-shadow-sm">
+            ¡Feliz 2do Aniversario!
+        </h1>
+        <p class="font-elegant text-xl md:text-2xl text-rose-400 italic">
+            2 años de una historia increíble...
+        </p>
+        <div class="mt-6 flex justify-center gap-2">
+            <span class="animate-bounce" style="animation-delay: 0.1s">✨</span>
+            <span class="animate-bounce" style="animation-delay: 0.2s">💖</span>
+            <span class="animate-bounce" style="animation-delay: 0.3s">🎉</span>
+            <span class="animate-bounce" style="animation-delay: 0.4s">🥂</span>
+            <span class="animate-bounce" style="animation-delay: 0.5s">✨</span>
+        </div>
+    </div>
+
+    <!-- Carta Principal -->
+    <div class="max-w-4xl w-full glass-effect rounded-[2.5rem] p-1 md:p-2 mb-16 shadow-2xl relative animate-fade-in-up" style="animation-delay: 0.2s">
+        <div class="bg-[#fffcf9] rounded-[2.3rem] p-8 md:p-12 border border-amber-100 shadow-inner overflow-hidden">
+            <!-- Decoración de esquina -->
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-amber-100/50 to-transparent rounded-bl-full -mr-10 -mt-10"></div>
+            
+            <div class="relative z-10 text-center mb-10">
+                <span class="text-4xl">💌</span>
+            </div>
+
+            <div class="space-y-8 font-simple text-gray-800 text-lg md:text-xl leading-relaxed text-center italic">
+                <p>
+                    "Mi vida, mi amor preciosota, ¡mi roba focos! JAJAJA."
+                </p>
+                <p>
+                    "Amor, ya pasamos 2 años llenos de historias, risas, llantos y muchísimos sentimientos. ¡Caramba! Como debe ser, porque no todo siempre es bonito, pero me encanta por completo pasar la vida contigo."
+                </p>
+                <p>
+                    "Y cuando digo que me encanta pasar tiempo contigo, ya no me refiero solo a estar juntos físicamente. También he empezado a valorar profundamente ese espacio tuyo; ese tiempo a solas que a ti te ayuda a respirar y que a mí me enseña muchísimo sobre cómo amarte mejor y más libre."
+                </p>
+                <p>
+                    "Siento que las aventuras que tuvimos hasta ahora son solo el comienzo. Quiero que vivamos muchísimo más: desde una escapada sencilla a Potosí, hasta un viaje internacional viendo lugares increíbles. Sé que estamos en el camino de hacer cosas grandes, y todo ese 'mucho' lo quiero construir a tu lado."
+                </p>
+                <p>
+                    "Como te dije un día como hoy hace 2 años: ¿Me permites ser la persona que esté a tu lado hasta hacernos viejitos? Jajaja. Hoy esa pregunta tiene tanto más sentido para mí, después de todo lo que he aprendido creciendo a tu lado."
+                </p>
+                <p class="font-bold text-pink-600 text-2xl pt-4">
+                    Feliz aniversario, mi amor precioso, Checcid de mi corazón, mi niña, mi linda mujer.
+                </p>
+            </div>
+
+            <div class="mt-12 text-center text-sm text-amber-600/70 font-simple">
+                *** Es un mensaje sincero, que mira hacia el futuro (los viajes, los proyectos) pero que abraza la realidad de cómo funcionan hoy como pareja. ¡Feliz aniversario para ambos!
+            </div>
+        </div>
+    </div>
+
+    <!-- Galería de Recuerdos -->
+    <div class="max-w-5xl w-full mb-20 px-4">
+        <h2 class="font-cursive text-4xl text-amber-800 text-center mb-12">Detalles que Atesoro 📸</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+            <!-- Foto 1: El Diavlo -->
+            <div class="flex flex-col items-center">
+                <div class="polaroid hover-lift">
+                    <img src="{% static 'dedicacion/images/recuerdos/eldiavlo.jpg' %}" alt="El Diavlo" class="w-full h-80 object-cover rounded-sm">
+                    <p class="font-cursive text-center mt-4 text-gray-500 text-xl">El diavlo...</p>
+                </div>
+            </div>
+
+            <!-- Foto 2: Los 2 Sonsos -->
+            <div class="flex flex-col items-center">
+                <div class="polaroid polaroid-right hover-lift">
+                    <img src="{% static 'dedicacion/images/recuerdos/los2sonsos.jpg' %}" alt="Los 2 Sonsos" class="w-full h-80 object-cover rounded-sm">
+                    <p class="font-cursive text-center mt-4 text-gray-500 text-xl">Los 2 sonsos 💖</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Risas -->
+    <div class="max-w-4xl w-full bg-amber-50/50 rounded-3xl p-8 md:p-12 border-2 border-dashed border-amber-200 mb-16 relative overflow-hidden">
+        <!-- Decoración -->
+        <div class="absolute -top-6 -left-6 text-4xl opacity-50">😂</div>
+        <div class="absolute -bottom-6 -right-6 text-4xl opacity-50">🤪</div>
+
+        <h3 class="font-cursive text-3xl text-amber-900 text-center mb-8 italic">¡Un poco de broma para cerrar con risas!</h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <!-- Foto Graciosa 1 -->
+            <div class="flex flex-col items-center gap-4">
+                <div class="w-64 h-64 rounded-2xl overflow-hidden shadow-lg border-4 border-white rotate-2 hover:rotate-0 transition-transform duration-300">
+                    <img src="{% static 'dedicacion/images/recuerdos/queseraeso.jpeg' %}" alt="¿Qué será eso?" class="w-full h-full object-cover">
+                </div>
+                <span class="funny-label">¿Qué será eso? 🤔</span>
+            </div>
+
+            <!-- Foto Graciosa 2 -->
+            <div class="flex flex-col items-center gap-4">
+                <div class="w-64 h-64 rounded-2xl overflow-hidden shadow-lg border-4 border-white -rotate-2 hover:rotate-0 transition-transform duration-300">
+                    <img src="{% static 'dedicacion/images/recuerdos/concentracion.jpg' %}" alt="Máxima Concentración" class="w-full h-full object-cover">
+                </div>
+                <span class="funny-label" style="transform: rotate(3deg);">Máxima Concentración 😤</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón de retorno -->
+    <div class="text-center mt-8 space-y-4">
+        <p class="font-simple text-gray-500 animate-pulse">Te amo hoy, mañana y siempre.</p>
+        <div class="flex gap-4 justify-center">
+            <a href="{% url 'carta' %}" class="bg-white/70 backdrop-blur-md text-pink-600 px-8 py-3 rounded-full border border-pink-200 hover:bg-white transition-all duration-300 font-medium shadow-md hover-lift">
+                Regresar a la carta
+            </a>
+            <a href="{% url 'inicio' %}" class="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-8 py-3 rounded-full hover:from-pink-600 transition-all duration-300 font-medium shadow-lg hover-lift">
+                Ir al inicio
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -11,4 +11,5 @@ urlpatterns = [
     path('recuerdos/', views.nuestros_recuerdos, name='recuerdos'),
     path('amor/', views.mi_amor, name='amor'),
     path('palabras/', views.palabras_especiales, name='palabras'),
+    path('aniversario/', views.mensaje_aniversario, name='aniversario'),
 ]
