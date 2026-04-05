@@ -74,6 +74,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [BASE_DIR / 'static']
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -85,16 +87,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ... tus otras configuraciones ...
 
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'
-
-# Directorio donde se recogerán los archivos estáticos para producción
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Directorios adicionales donde buscar archivos estáticos
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
 
 # Media files (imágenes subidas por usuarios)
 MEDIA_URL = '/media/'
